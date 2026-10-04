@@ -3,8 +3,8 @@
   overflow: hidden;
   width: 100%;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(168, 107, 124, 0.28), transparent 55%),
-    linear-gradient(165deg, #1a2740 0%, #0c1524 55%, #162033 100%);
+    radial-gradient(ellipse at 50% 30%, rgba(196, 165, 116, 0.22), transparent 55%),
+    linear-gradient(165deg, #2c221e 0%, #1a1412 55%, #120e0c 100%);
 }
 
 .image-placeholder__img {
@@ -21,13 +21,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.9rem;
-  color: rgba(244, 245, 247, 0.72);
+  color: rgba(247, 243, 238, 0.72);
 }
 
 .image-placeholder__petal {
   width: 1.6rem;
   height: 2.2rem;
-  border: 1px solid rgba(168, 107, 124, 0.75);
+  border: 1px solid rgba(196, 165, 116, 0.75);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   transform: rotate(-18deg);
   position: relative;
@@ -37,7 +37,7 @@
   content: "";
   position: absolute;
   inset: 0.35rem;
-  border: 1px solid rgba(154, 163, 173, 0.45);
+  border: 1px solid rgba(183, 169, 154, 0.45);
   border-radius: inherit;
 }
 

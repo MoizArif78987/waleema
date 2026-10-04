@@ -1,0 +1,19 @@
+.sparkles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.sparkles--fixed {
+  position: fixed;
+  z-index: 40;
+}
+
+.sparkles__dot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff8ef 0%, #c4a574 42%, transparent 72%);
+  box-shadow: 0 0 10px rgba(196, 165, 116, 0.7);
+}

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { event } from "../data/event";
+import { Sparkles } from "./Sparkles";
 import "./VenueMap.css";
 
 export function VenueMap() {
@@ -8,13 +9,13 @@ export function VenueMap() {
       <div className="section-inner venue__inner">
         <motion.div
           className="venue__header"
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 32, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="section-label">Location</p>
-          <h2 id="venue-heading" className="section-title">
+          <h2 id="venue-heading" className="section-title shimmer-text">
             {event.venue}
           </h2>
           <p className="section-copy">We look forward to welcoming you.</p>
@@ -22,11 +23,14 @@ export function VenueMap() {
 
         <motion.div
           className="venue__map-wrap"
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          data-lenis-prevent
+          initial={{ opacity: 0, y: 40, scale: 0.96 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
+          whileHover={{ scale: 1.01 }}
         >
+          <Sparkles count={14} />
           <iframe
             className="venue__iframe"
             src={event.mapsEmbed}
@@ -42,14 +46,21 @@ export function VenueMap() {
           href={event.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          whileHover={{ y: -2 }}
+          whileHover={{ y: -5, scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
         >
           Open in Maps
-          <span aria-hidden="true">→</span>
+          <motion.span
+            aria-hidden="true"
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 1.3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            →
+          </motion.span>
         </motion.a>
       </div>
     </section>

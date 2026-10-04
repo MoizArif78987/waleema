@@ -1,16 +1,20 @@
 :root {
-  /* Orchid Nocturne palette */
-  --porcelain: #f4f5f7;
-  --porcelain-deep: #e8eaee;
-  --ink: #0c1524;
-  --ink-soft: rgba(12, 21, 36, 0.68);
-  --ink-faint: rgba(12, 21, 36, 0.45);
-  --orchid: #a86b7c;
-  --orchid-soft: #c48a99;
-  --platinum: #9aa3ad;
-  --platinum-light: #c5cbd4;
-  --mist: rgba(244, 245, 247, 0.88);
-  --veil: rgba(12, 21, 36, 0.42);
+  /* Champagne Orchid — tuned for cream bridal illustration */
+  --porcelain: #f7f3ee;
+  --porcelain-deep: #efe7df;
+  --ink: #1a1412;
+  --ink-soft: rgba(26, 20, 18, 0.68);
+  --ink-faint: rgba(26, 20, 18, 0.45);
+  --orchid: #9e6b74;
+  --orchid-soft: #c49aa3;
+  --champagne: #c4a574;
+  --champagne-light: #dfc49a;
+  --platinum: #b7a99a;
+  --platinum-light: #d9cfc4;
+  --mist: rgba(247, 243, 238, 0.9);
+  --veil: rgba(26, 20, 18, 0.4);
+  --espresso: #1a1412;
+  --espresso-soft: #2c221e;
 
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Manrope", system-ui, sans-serif;
@@ -54,13 +58,31 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis owns smooth scrolling — keep native behavior off to avoid double-easing */
+  scroll-behavior: auto;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
   max-width: 100%;
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 html::-webkit-scrollbar {
