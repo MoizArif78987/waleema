@@ -48,6 +48,14 @@
   color: var(--platinum);
 }
 
+.closing__note {
+  max-width: 26rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
 .closing__date {
   margin-top: var(--space-xs);
   font-size: 0.88rem;
