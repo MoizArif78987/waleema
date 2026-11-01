@@ -29,7 +29,7 @@ export function Hero() {
         >
           <ImagePlaceholder
             src={event.images.hero}
-            alt="Abdul Moiz Arif and Fatima Zafar illustration"
+            alt="Waleema celebration illustration"
             label="Hero illustration"
             className="hero__placeholder"
           />
@@ -76,20 +76,32 @@ export function Hero() {
           {event.label}
         </motion.p>
 
+        <motion.p
+          className="hero__hosts"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 1.25, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {event.hosts}
+        </motion.p>
+
+        <motion.p
+          className="hero__invite"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          {event.inviteLine}
+        </motion.p>
+
         <motion.h1
           className="hero__names"
           initial={{ opacity: 0, y: 28, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.15, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1.15, delay: 1.55, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="hero__name">{event.groom}</span>
-          <motion.span
-            className="hero__amp"
-            animate={{ scale: [1, 1.12, 1], opacity: [0.8, 1, 0.8] }}
-            transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            &
-          </motion.span>
+          <span className="hero__name">{event.son}</span>
+          <span className="hero__amp">&</span>
           <span className="hero__name">{event.bride}</span>
         </motion.h1>
 
@@ -97,7 +109,7 @@ export function Hero() {
           className="hero__date"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 1.55, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.85, delay: 1.95, ease: [0.16, 1, 0.3, 1] }}
         >
           {event.day} · {event.dateDisplay}
         </motion.p>
@@ -107,7 +119,7 @@ export function Hero() {
           className="hero__cta"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 1.75, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.85, delay: 2.1, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -4, letterSpacing: "0.28em" }}
           whileTap={{ scale: 0.97 }}
         >

@@ -124,7 +124,7 @@
     var(--space-xl)
     max(var(--page-pad), env(safe-area-inset-right))
     max(var(--space-lg), calc(env(safe-area-inset-bottom) + 1.25rem))
-    max(var(--page-pad), env(safe-area-inset-left));
+    max(calc(var(--page-pad) + 1.15rem), calc(env(safe-area-inset-left) + 1.15rem));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -140,11 +140,30 @@
   color: var(--champagne-light);
 }
 
+.hero__hosts {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3.6vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(247, 243, 238, 0.9);
+}
+
+.hero__invite {
+  margin-top: 0.1rem;
+  max-width: 22rem;
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: rgba(247, 243, 238, 0.82);
+}
+
 .hero__names {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.25rem;
+  margin-top: 0.15rem;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(2.05rem, 9.5vw, 3.4rem);
@@ -168,7 +187,7 @@
 }
 
 .hero__date {
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
   font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: 0.08em;
@@ -208,8 +227,9 @@
 
   .hero__content {
     max-width: 42rem;
-    margin-left: max(var(--page-pad), env(safe-area-inset-left));
+    margin-left: max(calc(var(--page-pad) + 1.5rem), calc(env(safe-area-inset-left) + 1.5rem));
     margin-right: auto;
+    padding-left: max(calc(var(--page-pad) + 0.5rem), calc(env(safe-area-inset-left) + 0.5rem));
   }
 
   .hero__names {
